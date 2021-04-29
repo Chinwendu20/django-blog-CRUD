@@ -7,19 +7,19 @@
 </div>
 <h4>Comments</h4>
 {% if not post.comments.all %}
-    No comments yet..
-    <p><a href="{% url 'post_comment' post.pk %}">Add</a></p>
+No comments yet..
+<p><a href="{% url 'post_comment' post.pk %}">Add</a></p>
 {% else %}
-    <a href="{% url 'post_comment' post.pk %}">Comment Here</a>
-    <br><br>
-    {% for comment in post.comments.all %}
-        <strong>
-            {{ comment.name }}
-        </strong>
-        <br>
-        {{ comment.body }}
-        <br><br>
-    {% endfor %}
+<a href="{% url 'post_comment' post.pk %}">Comment Here</a>
+<br><br>
+{% for comment in post.comments.all %}
+<strong>
+    {{ comment.name }}
+</strong>
+<br>
+{{ comment.body }}
+<br><br>
+{% endfor %}
 {% endif %}
 <p>
     <a href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>
