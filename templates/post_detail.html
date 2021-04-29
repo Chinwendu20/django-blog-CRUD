@@ -6,13 +6,11 @@
     <p>{{post.body}}</p>
 </div>
 <h4>Comments</h4>
-<br>
-{% if not post.comment.all %}
+{% if not post.comments.all %}
     No comments yet..
     <p><a href="{% url 'post_comment' post.pk %}">Add</a></p>
 {% else %}
-    <br><br>
-    <a href="{% url 'post_comment' post.pk %}">Add Comment</a>
+    <a href="{% url 'post_comment' post.pk %}">Comment Here</a>
     <br><br>
     {% for comment in post.comments.all %}
         <strong>

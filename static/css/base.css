@@ -3,14 +3,14 @@ body{
     font-size: 18px;
 }
 
-header .nav-left{
+header{
     border-bottom: 1px solid #999;
     margin-bottom: 2 rem;
     display:flex;
 }
 
 header h1 a {
-    color:yellow;
+    color:red;
     text-decoration:none;
 }
 
