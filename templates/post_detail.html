@@ -2,14 +2,31 @@
 
 {% block content %}
 <div class="post-entry">
-    <h2>{{object.title}}</h2>
-    <p>{{object.body}}</p>
+    <h2>{{post.title}}</h2>
+    <p>{{post.body}}</p>
 </div>
+<h4>Comments</h4>
+<br>
+{% if not post.comment.all %}
+    No comments yet..
+    <p><a href="{% url 'post_comment' post.pk %}">Add</a></p>
+{% else %}
+    <br><br>
+    <a href="{% url 'post_comment' post.pk %}">Add Comment</a>
+    <br><br>
+    {% for comment in post.comments.all %}
+        <strong>
+            {{ comment.name }}
+        </strong>
+        <br>
+        {{ comment.body }}
+        <br><br>
+    {% endfor %}
+{% endif %}
 <p>
     <a href="{% url 'post_edit' post.pk %}">Edit Blog Post</a>
 </p>
 <p>
     <a href="{% url 'post_delete' post.pk %}">Delete Blog Post</a>
 </p>
-
 {% endblock content %}
