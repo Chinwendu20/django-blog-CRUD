@@ -33,3 +33,4 @@ share/python-wheels/
 MANIFEST
 Pipfile
 Pipfile.lock
+db.sqlite3
