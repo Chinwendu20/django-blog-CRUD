@@ -31,4 +31,5 @@ share/python-wheels/
 .installed.cfg
 *.egg
 MANIFEST
-
+Pipfile
+Pipfile.lock
